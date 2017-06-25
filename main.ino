@@ -5,6 +5,7 @@
 
 /****************** Headers ******************/
 #include "lib/motor.h"
+#include "lib/robot.h"
 
 /*********************************************/
 
@@ -15,22 +16,14 @@
  * Current sensing  	A0 	  A1   (14 & 15)
  */
 
-Motor leftMotor(12, 3, 9, 14);
-Motor rightMotor(13, 11, 8, 15);
+Robot robotOne(new Motor(12, 3, 9, 14), new Motor(13, 11, 8, 15));
 
 void setup()
 {
-  leftMotor.setup();
-  rightMotor.setup();
+  robotOne.setupRobot();
 }
 
 void loop()
 {
-  leftMotor.rotate(clockwise, 100);
-
-  delay(3000);
-
-  leftMotor.rotate(counterClockwise, 100);
-
-  delay(1000);
+  //TODO: Write awesome program
 }

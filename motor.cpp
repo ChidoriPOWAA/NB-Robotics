@@ -15,10 +15,15 @@ Motor::Motor(const int directionPin,
 {
 }
 
+Motor::~Motor()
+{
+  digitalWrite(pwmPin_, 0);
+}
+
 /* Function: setup
  * Brief: prepares the motor for use
  */
-void Motor::setup()
+void Motor::setupMotor()
 {
   pinMode(directionPin_, OUTPUT);
   pinMode(pwmPin_, OUTPUT);
