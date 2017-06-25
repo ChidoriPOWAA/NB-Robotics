@@ -3,8 +3,8 @@
 
 enum Direction
 {
-  clockwise = 0,
-  counterClockwise = 1
+  counterClockwise = 0,
+  clockwise = 1
 };
 
 class Motor

@@ -27,12 +27,10 @@ void setup()
 void loop()
 {
   leftMotor.rotate(clockwise, 100);
-  rightMotor.rotate(clockwise, 100);
 
-  delay(2500);
+  delay(3000);
 
   leftMotor.rotate(counterClockwise, 100);
-  rightMotor.rotate(counterClockwise, 100);
 
   delay(1000);
 }

@@ -34,8 +34,8 @@ void Motor::setup()
  */
 void Motor::rotate(Direction direction, int speed)
 {
-  speed = constrain(speed, 0, 255);
-  speed = map(speed, 0, 255, 0, 100);
+  speed = constrain(speed, 0, 100);
+  speed = map(speed, 0, 100, 0, 255);
 
   digitalWrite(brakePin_, LOW);
   digitalWrite(directionPin_, direction);
