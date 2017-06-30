@@ -37,7 +37,7 @@ void Motor::setupMotor()
 /* Function: rotate
  * Brief: rotates wheel in the specified direction and speed
  */
-void Motor::rotate(Direction direction, int speed)
+void Motor::rotate(Direction direction, unsigned int speed)
 {
   speed = constrain(speed, 0, 100);
   speed = map(speed, 0, 100, 0, 255);
@@ -45,4 +45,13 @@ void Motor::rotate(Direction direction, int speed)
   digitalWrite(brakePin_, LOW);
   digitalWrite(directionPin_, direction);
   analogWrite(pwmPin_, speed);
+}
+
+/* Function: brake
+ * Brief: stop rotating
+ */
+void Motor::brake()
+{
+  analogWrite(pwmPin_, 0);
+  digitalWrite(brakePin_, HIGH);
 }

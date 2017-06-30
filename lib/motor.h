@@ -23,7 +23,8 @@ class Motor
     ~Motor();
     
     void setupMotor();
-    void rotate(Direction direction, int speed);
+    void rotate(Direction direction, unsigned int speed);
+    void brake();
 };
 
 #endif

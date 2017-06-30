@@ -2,6 +2,7 @@
 #define ROBOT_H
 
 #include "motor.h"
+#include "sensors.h"
 
 enum Side
 {
@@ -14,16 +15,24 @@ class Robot
   private:
     Motor * leftMotor_;
     Motor * rightMotor_;
+    Sonar * sonar_;
 
   public:
-    Robot(Motor * leftMotor, Motor * rightMotor);
+    Robot(Motor * leftMotor,
+          Motor * rightMotor,
+          Sonar * sonar);
     ~Robot();
 
     void setupRobot();
 
-    void go(int speed);
-    void reverse(int speed);
-    void turn(Side side, int speed);
+    void go(unsigned int speed);
+    void stop();
+    void reverse(unsigned int speed);
+    void turn(Side side, unsigned int speed);
+    void checkForObject(double maxDistance); //TODO: extract stop from func
+
+    //TODO: remove helper functions when not needed for testing
+    Sonar * getSonarHelperFunction();
 };
 
 #endif
