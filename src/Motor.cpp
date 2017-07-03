@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "lib/motor.h"
+#include "../lib/Motor.h"
 
 /* Function: Motor constructor
  * Brief: creates Motor object and initializes pins

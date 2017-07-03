@@ -21,7 +21,7 @@ class Motor
           const int brakePin,
           const int currentSensingPin);
     ~Motor();
-    
+
     void setupMotor();
     void rotate(Direction direction, unsigned int speed);
     void brake();
